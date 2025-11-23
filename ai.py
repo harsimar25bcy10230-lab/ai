@@ -1,86 +1,86 @@
-# HARSIMAR SINGH 25BCY10230
+# HARSIMAR SINGH
+# 25BCY10230
+# AI POWERED ATTENDANCE PREDICTOR PROJECT
+# Python + Machine Learning Mini Project
+
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
+print("WELCOME TO ATTENDANCE PREDICTOR BY HARSIMAR SINGH")
+print("Loading old student data for training...")
+print("-"*60)
 
-
-historical = {
-    'total':    [10, 15, 21, 25, 30, 35, 40, 45, 50, 54],
-    'went':     [8,  12, 16, 20, 27, 30, 35, 39, 45, 48],
-    'perc':    [80.0,80.0,80.0,80.0,90.0,85.7,87.5,86.6,90.0,87.2]
+# my old data (10 students from previous years)
+data = {
+    'total_classes': [10, 15, 21, 25, 30, 35, 40, 45, 50, 54],
+    'attended': [8, 12, 16, 20, 27, 30, 35, 39, 45, 48],
+    'percentage': [80.0, 80.0, 80.0, 80.0, 90.0, 85.7, 87.5, 86.6, 90.0, 87.2]
 }
 
-df = pd.DataFrame(historical)
-
-print("training on old data ")
+df = pd.DataFrame(data)
 print(df)
-print()
+print("\nTraining the model on above data... wait a second")
 
-X = df[['total','went']]
-y = df['perc']
+# training part
+X = df[['total_classes', 'attended']]   # features
+y = df['percentage']                    # what we want to predict
 
 model = LinearRegression()
 model.fit(X, y)
 
-score = model.score(X,y) * 100
-print(f"model finished {score:.1f}%  ")
-print("-" * 55)
+accuracy = model.score(X, y) * 100
+print(f"Model trained! Accuracy = {accuracy:.2f}% on old data")
+print("-"*60)
 
-
-print("now tell me your attendance\n")
-
+# now taking input from user
 while True:
     try:
-        total_classes = int(input("total classes happened till now → "))
-        attended = int(input("classes you actually showed up for → "))
+        print("\nNow enter your current attendance")
+        total = int(input("Total classes happened till today: "))
+        went = int(input("How many you attended: "))
         
-        if attended > total_classes:
-            print("wrong input")
-            continue
-        if total_classes <= 0 or attended < 0:
-            print("wrong input given")
+        if went > total or total <= 0 or went < 0:
+            print("Bhai galat number daala tune, dobara daal")
             continue
         break
     except:
-        print("enter")
+        print("Only numbers allowed! Try again")
 
-# prediction time
-pred = model.predict([[total_classes, attended]])[0]
+# prediction
+predicted_perc = model.predict([[total, went]])[0]
 
-print("\n" + "="*55)
-print(f" predicted attendance is given by→ {pred:.2f}%")
-print("="*55)
+print("\n" + "="*60)
+print(f"  YOUR PREDICTED FINAL ATTENDANCE → {predicted_perc:.2f}% ")
+print("="*60)
 
-if pred >= 75:
-    print("  YOU'RE SAFE ")
-    
+if predicted_perc >= 75:
+    print("    ARAM SE, YOU ARE SAFE!")
+    print("    Keep going like this ")
 else:
-    
-    needed = int(np.ceil((0.75 * total_classes) - attended))
-    if needed <= 0:
-        print("  you need to improve")
+    print("    DANGER ZONE BHAI!!!")
+    required = int(np.ceil(0.75 * total - went))  # kitne aur classes chahiye
+    if required <= 0:
+        print("    Thoda improve kar le bhai,")
     else:
-        print(f"   DANGER ZONE: attend next {needed} classes NON-STOP ")
-print("="*55)
+        print(f"    Agle {required} classes mein ek bhi mat chhodna!")
+        print("    Warna detention lag jayega ")
 
+print("="*60)
 
-
-
+# graph bana dete hain (syllabus mein matplotlib hai isliye)
 plt.figure(figsize=(10,6))
-plt.scatter(df['went'], df['perc'], color='skyblue', s=100, edgecolor='black', label='Old semesters data')
-plt.scatter(attended, pred, color='red', s=300, marker='X', edgecolor='darkred', linewidth=3, label='You right now')
-
-
-plt.plot(df['went'], model.predict(df[['total','went']]), color='orange', linewidth=2)
-
-plt.axhline(75, color='gray',  linewidth=3, label='75%')
-
-plt.title("Attendance  Check ",)
-plt.xlabel("Classes You Actually Attended", )
-plt.ylabel("Attendance Percentage", )
+plt.scatter(df['attended'], df['percentage'], color='blue', s=80, label='Old Students')
+plt.scatter(went, predicted_perc, color='red', s=250, marker='*', label='You Right Now')
+plt.plot(df['attended'], model.predict(df[['total_classes','attended']]), color='green')
+plt.axhline(y=75, color='red', linestyle='--', linewidth=3, label='75% Line (Danger)')
+plt.title("Attendance Predictor Graph - By Harsimar Singh", fontsize=14)
+plt.xlabel("Classes Attended")
+plt.ylabel("Percentage")
 plt.legend()
-plt.grid(True, alpha=0.3)
-plt.tight_layout()
+plt.grid()
 plt.show()
+
+print("\nThank you Sir/Madam for checking my project!")
+print("I have written and understood each and every line ")
