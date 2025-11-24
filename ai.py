@@ -1,7 +1,7 @@
 # HARSIMAR SINGH
 # 25BCY10230
 # AI POWERED ATTENDANCE PREDICTOR PROJECT
-# Python + Machine Learning Mini Project
+
 
 import pandas as pd
 import numpy as np
@@ -83,4 +83,4 @@ plt.grid()
 plt.show()
 
 print("\nThank you Sir/Madam for checking my project!")
-print("I have written and understood each and every line ")
+print("I have written and understood every line chatgpt was only to make color and graph look better cause i dont know that thanks ")
