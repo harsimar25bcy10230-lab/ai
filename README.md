@@ -1,38 +1,18 @@
-# AI-Powered Student Attendance Predictor
+House Price Prediction Project
+this is a project where we try to guess house prices using some machine learning. we are trying to predict how much a place will cost based on its size, how many rooms it has, and how old it is.
 
-## Project Overview
-This is my project.  
-The goal is to build a simple system that can predict whether a student is at risk of falling below the 75% attendance required to sit for the exam.
+ What We Used
+i mainly used the python programming language and a few libraries:
 
-## Problem I'm Trying to Solve
-In our college, many students get barred from exams because of low attendance and most of the time teachers find out only in the last week. I wanted to make something that can warn us earlier (maybe 3-4 weeks before) so counselors or class teachers can talk to the student.
+:pandas: we used it to organize our data (area, bedrooms, age, and price) into something called a dataframe.
 
-## How It Works (very basic right now)
-- I collected dummy attendance data of 100 students for the first 8 weeks (CSV file in data/ folder)
-- Added some extra columns I thought matter: CGPA of previous sem, distance from home to college, number of backlogs, etc.
-- Used a Random Forest model (I followed scikit-learn examples + some YouTube tutorials)
-- The model tries to predict the final attendance percentage
-- If predicted < 75%, it flags the student as "at risk"
+matplotlib.pyplot (plt): this helps us draw graphs. we used it to plot our results and see how well our guesses matched the actual prices.
 
-## Files
-- `attendance_data.csv` → dummy dataset I created
-- `train_model.py` → code to train and save the model
-- `predict.py` → load model and predict for new students
-- `notebook.ipynb` → where I did all the experimentation
+(sklearn): this is where the actual "machine learning" happen.
 
-## What I Learned
-- How to handle categorical variables (OneHotEncoder)
-- Feature importance (found that previous semester attendance is the strongest predictor)
-- Random Forest works better than simple linear regression for this
-
-## Limitations (I know it's not perfect)
-- Data is completely made up right now
-- Very small dataset
-- Not yet connected to real college database
-
-## Next Steps (if I get time)
-- Add real data (with permission)
-- Make a simple web page where teacher can upload CSV and get list of at-risk students
-- Send email alerts automatically
-
-I wrote all the code myself (only used ChatGPT to fix some small errors and understand concepts).
+train_test_split: helps us split our small dataset into two parts: one part for the model to learn from and one part for us to test how good it is (testing).
+The Data We Hadour data is tiny right now, just a few sample houses:area: the size of the house.bedrooms: number of bedrooms.age: how old the house is.price: the actual price. 
+How The Code Worksdata work:
+we put the sample data into a pandas dataframe.splitting: we separate the data into features (area, bedrooms, age) and the target (price). then we split it into training and testing sets.training: we tell the linear regression model to learn from the training data: we use the trained model to guess the prices for the houses in the testing data.checking:we calculate the accuracy using $r^2$ score.we calculate the average error to see how far off our predictions were from the actual prices.seeing
+the results: 
+we create a scatter plot. if the dots fall close to the straight line, our predictions were good.
