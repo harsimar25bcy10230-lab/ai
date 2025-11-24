@@ -1,11 +1,9 @@
-\
-AI-Powered Student Attendance Predictor
+house price predictor
 
 Submitted by
 Name        : HARSIMAR SINGH
 Roll No     : 25BCY10230
 
 Year        : 2025-26
-1. Problem Statement / Introduction
-Regular attendance is very important for students to do well in exams. Many times students start missing classes slowly and in the end their percentage becomes very low, so they get detained or face problems.
-If teachers or college can get an early warning that a particular student may fall below 75% (or whatever the minimum requirement is), they can talk to the student or parents on time and solve the issue.
+ Problem Statement / Introduction
+ many people have trouble valuing their property markets are unstable but we can use historical data and past experiences to do so. this is the part house price predictor plays in the market we provide it with info like area,bedrooms,price,age and using machine learning and regression it predicts the price of house helping the tenants.
