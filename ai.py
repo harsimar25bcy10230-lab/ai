@@ -2,6 +2,7 @@
 # Name:harsimar singh
 # Roll No: 25bcy10230
 #these module needs to be imported to work with ml
+import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
@@ -14,7 +15,7 @@ data={'age':age,'bedrooms':bedrooms,'area':area,'price':price}
 d=pd.dataframe(data)
 x=d[['area','bedroom','age']]
 y=d[['price']]
-xtotrain,xtotest,ytotrain,ytotest=traintest(x,y,testsize0.2)
+xtotrain,xtotest,ytotrain,ytotest=traintest(x,y,testsize=0.2)
 # i am using linear regression to predict house prices
 model=linearregression()
 model.fit(xtotrain,ytotrain)
