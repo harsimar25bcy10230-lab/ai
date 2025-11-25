@@ -18,3 +18,5 @@ How The Code Worksdata work:
 i put the sample data into a pandas dataframe.splitting: we separate the data into features (area, bedrooms, age) and the target (price). then i split it into training and testing sets.training: we tell the linear regression model to learn from the training data: i use the trained model to guess the prices for the houses in the testing data.checking:we calculate the accuracy using $r^2$ score.i calculated the average error to see how far off our predictions were from the actual prices.seeing
 the results: 
 then i create a scatter plot. if the dots fall close to the straight line then the predictions were good.
+
+this project helps people guess the price of house. it is based on linear regression . ml modules are used relating it to into to ai ml course.
