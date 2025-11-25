@@ -7,23 +7,23 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression
-area=[100,131,321,435,241,432]# you can edit this or modify these data based on the house prices in your locality or state
+area=[100,131,321,435,241,432]# you can edit this or modify these data based on the house prices in your locality or state to get better result and more colleration
 bedrooms=[1,4,2,2,1,4]
 age=[10,21,13,3,21,11]
 price=[12,43,21,21,11,34]
 data={'age':age,'bedrooms':bedrooms,'area':area,'price':price}
-d=pd.dataframe(data)
-x=d[['area','bedroom','age']]
-y=d[['price']]
-xtotrain,xtotest,ytotrain,ytotest=traintest(x,y,testsize=0.2)
+d=pd.DataFrame(data)
+x=d[['area','bedrooms','age']]
+y=d['price']
+xtotrain,xtotest,ytotrain,ytotest=train_test_split(x,y,test_size=0.2)
 # i am using linear regression to predict house prices
-model=linearregression()
+model=LinearRegression()
 model.fit(xtotrain,ytotrain)
-predection=model.predict(xtotest)
-accuracy=r2_score(ytotest,predection)
+prediction=model.predict(xtotest)
+accuracy=r2_score(ytotest,prediction)
 results = pd.DataFrame({'actual value':ytotest.values,'predicted price)': prediction.round(2)})
 error = abs(ytotest.values-prediction).mean()
-print('this is the error':error)
+print('this is the error that happened in the price',error)
 plt.figure()
 plt.scatter(ytotest,prediction)
 plt.plot([ytotest.min(),ytotest.max()],[ytotest.min(),ytotest.max()])
