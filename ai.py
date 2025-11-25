@@ -3,10 +3,10 @@
 # Roll No: 25bcy10230
 #these module needs to be imported to work with ml
 import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt# it will plot our data
+from sklearn.model_selection import train_test_split#these are used for ml purpose i just imported them
 from sklearn.metrics import r2_score
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression#will be used for regression model
 area=[100,131,321,435,241,432]# you can edit this or modify these data based on the house prices in your locality or state to get better result and more colleration
 bedrooms=[1,4,2,2,1,4]
 age=[10,21,13,3,21,11]
