@@ -1,5 +1,7 @@
 House Price Prediction Project
 this is a project where we try to guess house prices using some machine learning. we are trying to predict how much a place will cost based on its size, how many rooms it has, and how old it is.
+output is:
+<img width="989" height="590" alt="download" src="https://github.com/user-attachments/assets/9c47cac2-aa25-4165-a004-8e02ae8c8691" />
 
  What We Used
 i mainly used the python programming language and a few libraries:
