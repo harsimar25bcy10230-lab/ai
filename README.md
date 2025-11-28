@@ -37,7 +37,7 @@ import the libraries i mentioned that are pandas, matplotlib  scikit-learn.
 to run this program
 
 
-note: you need a lot of data to train the model the output you see was obtained through housing data in san diego i shorten it in my code for demo purpose please get your mass locality data to use this model better. THANK YOU
+note: you need a lot of data to train the model the output you see was obtained through housing data in san diego i shortened it in my code for demo purpose please get your mass locality data to use this model better. THANK YOU
 
 output:
 the program prints :
