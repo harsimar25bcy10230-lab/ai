@@ -1,22 +1,46 @@
-House Price Prediction Project
-this is a project where i try to guess house prices using some machine learning. i am trying to predict how much a place will cost based on its size, how many rooms it has, and how old it is.
-output is:
+name: harsimar singh
+roll no:25bcy10230
+title:house prediction through ml
+my project is about using ml to predict the price of house on few past dataset related to house like rooms,area etc.
+
+the libraries i used:
+panda
+matplotlib
+r2_score-to measure accuracy
+linear regression
+train_test_split-to divide data
+
+i created a small dataset manually.
+Each entry contains:
+area (sq. ft.)
+bedrooms
+age of the house
+price
+
+How the Program Works
+
+I store the sample values into lists and then convert them DataFrame.
+I separate the DataFrame into:
+Features(X) = area, bedrooms, age
+Target(y) = price
+I split the dataset into training set and a testing set
+I train a Linear Regression model using the training data
+model predicts house prices for the test data
+I calculate:
+R^2 score that is the accuracy of the model
+Mean Absolute Error which is average difference between actual and predicted values
+I plot a graph to visually compare predicted values with actual values
+at the end the plot is saved in the project folder as result.png.
+
+
+import the libraries i mentioned that are pandas, matplotlib  scikit-learn.
+to run this program
+
+output:
+the program prints :
+The model accuracy
+The average prediction error
+A comparisono f actual vs predicted prices
+output looks like:
 <img width="989" height="590" alt="download" src="https://github.com/user-attachments/assets/9c47cac2-aa25-4165-a004-8e02ae8c8691" />
 
- What We Used
-i mainly used the python programming language and a few libraries:
-
-:pandas: i used it to organize our data (area, bedrooms, age, and price) into something called a dataframe.
-
-matplotlib.pyplot (plt): this helps us draw graphs. i used it to plot our results and see how well our guesses matched the actual prices.
-
-(sklearn): this is where the  "machine learning" happen.
-
-train_test_split: helps us split our small dataset into two parts: one part for the model to learn from and one part for us to test how good it is (testing).
-The Data We Hadour data is tiny right now, just a few sample houses:area: the size of the house.bedrooms: number of bedrooms.age: how old the house is.price: the actual price. 
-How The Code Worksdata work:
-i put the sample data into a pandas dataframe.splitting: we separate the data into features (area, bedrooms, age) and the target (price). then i split it into training and testing sets.training: we tell the linear regression model to learn from the training data: i use the trained model to guess the prices for the houses in the testing data.checking:we calculate the accuracy using $r^2$ score.i calculated the average error to see how far off our predictions were from the actual prices.seeing
-the results: 
-then i create a scatter plot. if the dots fall close to the straight line then the predictions were good.
-
-this project helps people guess the price of house. it is based on linear regression . ml modules are used relating it to into to ai ml course.
