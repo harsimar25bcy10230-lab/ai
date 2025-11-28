@@ -40,7 +40,7 @@ output:
 the program prints :
 The model accuracy
 The average prediction error
-A comparisono f actual vs predicted prices
+A comparisonon of actual vs predicted prices
 output looks like:
 <img width="989" height="590" alt="download" src="https://github.com/user-attachments/assets/9c47cac2-aa25-4165-a004-8e02ae8c8691" />
 
