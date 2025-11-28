@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split#these are used for ml purpo
 from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression#will be used for regression model
 area=[100,131,321,435,241,432]#this is a sample data size of only 6 houses to use it get your locality info and get much more data as model will require much more to train efficiently
-bedrooms=[1,4,2,2,1,4]
+bedrooms=[1,4,2,2,1,4]#note you must add more data to train model the output in readme contained a lot more data for demo purposes i made it shorter
 age=[10,21,13,3,21,11]
 price=[12,43,21,21,11,34]
 data={'age':age,'bedrooms':bedrooms,'area':area,'price':price}
